@@ -25,7 +25,7 @@ RUN apt purge -y cmake \
 	&& apt install -y openssl \
 	&& wget https://github.com/Kitware/CMake/releases/download/v3.28.3/cmake-3.28.3-linux-x86_64.tar.gz -O cmake.tar.gz \
 	&& mkdir /opt/cmake-3.28 \
-	&& tar xf cmake.tar.gz -C /opt/cmake-3.28 \
+	&& tar xf cmake.tar.gz -C /opt/cmake-3.28 --strip-components 1 \
 	&& rm cmake.tar.gz \
 	&& ln -s /opt/cmake-3.28/bin/* /usr/local/bin
 
